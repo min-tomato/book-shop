@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/min-tomato/online-shop/backend/global"
-	"github.com/min-tomato/online-shop/backend/internal/po"
+	"github.com/min-tomato/online-shop/backend/internal/models"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -47,8 +47,8 @@ func SetPool() {
 
 func migrateTables() {
 	err := global.Mdb.AutoMigrate(
-		&po.User{},
-		&po.Role{},
+		&models.User{},
+		&models.Role{},
 	)
 	if err != nil {
 		fmt.Println("Migrating tables error:", err)
