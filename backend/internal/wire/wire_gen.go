@@ -9,14 +9,14 @@ package wire
 import (
 	"github.com/min-tomato/online-shop/backend/internal/controller"
 	"github.com/min-tomato/online-shop/backend/internal/repo"
-	"github.com/min-tomato/online-shop/backend/internal/service"
+	"github.com/min-tomato/online-shop/backend/internal/services"
 )
 
 // Injectors from user.wire.go:
 
 func InitUserRouterHandler() (*controller.UserController, error) {
 	iUserRepository := repo.NewUserRepository()
-	iUserService := service.NewUserService(iUserRepository)
+	iUserService := services.NewUserService(iUserRepository)
 	userController := controller.NewUserController(iUserService)
 	return userController, nil
 }

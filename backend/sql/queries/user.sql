@@ -1,0 +1,5 @@
+-- name: GetUserByID :one
+SELECT USR_ID, USR_EMAIL FROM `USERS` WHERE USR_ID = ? LIMIT 1;
+
+-- name: GetUserByEmail :one
+SELECT USR_ID, USR_EMAIL FROM `USERS` WHERE USR_EMAIL = ? LIMIT 1;
