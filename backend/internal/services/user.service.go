@@ -1,4 +1,4 @@
-package service
+package services
 
 import (
 	"github.com/min-tomato/online-shop/backend/internal/repo"

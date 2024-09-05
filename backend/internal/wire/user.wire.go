@@ -6,13 +6,13 @@ import (
 	"github.com/google/wire"
 	"github.com/min-tomato/online-shop/backend/internal/controller"
 	"github.com/min-tomato/online-shop/backend/internal/repo"
-	"github.com/min-tomato/online-shop/backend/internal/service"
+	"github.com/min-tomato/online-shop/backend/internal/services"
 )
 
 func InitUserRouterHandler() (*controller.UserController, error) {
 	wire.Build(
 		repo.NewUserRepository,
-		service.NewUserService,
+		services.NewUserService,
 		controller.NewUserController,
 	)
 

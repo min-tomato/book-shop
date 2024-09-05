@@ -2,16 +2,16 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/min-tomato/online-shop/backend/internal/service"
+	"github.com/min-tomato/online-shop/backend/internal/services"
 	"github.com/min-tomato/online-shop/backend/pkg/response"
 )
 
 type UserController struct {
-	userService service.IUserService
+	userService services.IUserService
 }
 
 func NewUserController(
-	userService service.IUserService,
+	userService services.IUserService,
 ) *UserController {
 	return &UserController{
 		userService: userService,
